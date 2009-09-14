@@ -6,7 +6,7 @@
 Summary:	%{_pearname} - provides classes to create mime messages
 Name:		php-pear-%{_pearname}
 Version:	1.5.2
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
