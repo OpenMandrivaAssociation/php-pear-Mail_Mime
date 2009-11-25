@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.5.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 Summary:	Mail_Mime provides classes to create mime messages
 License:	PHP License
 Group:		Development/PHP
@@ -40,8 +40,8 @@ cd %{upstream_name}-%{version}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
-rm -rf %{buildroot}%{_datadir}/pear/doc
-rm -rf %{buildroot}%{_datadir}/pear/test
+rm -rf %{buildroot}%{_datadir}/pear/docs
+rm -rf %{buildroot}%{_datadir}/pear/tests
 
 install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
@@ -50,21 +50,21 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 rm -rf %{buildroot}
 
 %post
+%if %mdkversion < 201000
 pear install --nodeps --soft --force --register-only \
     %{_datadir}/pear/packages/%{upstream_name}.xml >/dev/null || :
+%endif
 
 %preun
+%if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
         %{pear_name} >/dev/null || :
 fi
+%endif
 
 %files
 %defattr(-,root,root)
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/data/%{upstream_name}
 %{_datadir}/pear/packages/%{upstream_name}.xml
-
-%changelog
-* Fri Sep 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.2-1mdv2010.0
-- split out from php-pear package
