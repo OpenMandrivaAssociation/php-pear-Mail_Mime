@@ -3,8 +3,8 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	1.5.2
-Release:	%mkrel 6
+Version:	1.5.3
+Release:	%mkrel 1
 Summary:	Mail_Mime provides classes to create mime messages
 License:	PHP License
 Group:		Development/PHP
