@@ -54,7 +54,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %{_datadir}/pear/%{_class}
-%{_datadir}/pear/data/%{upstream_name}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
 
