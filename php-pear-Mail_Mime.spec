@@ -4,7 +4,7 @@
 
 Summary:	Mail_Mime provides classes to create mime messages
 Name:		php-pear-%{modname}
-Version:	1.8.7
+Version:	1.8.8
 Release:	1
 License:	PHP License
 Group:		Development/PHP
