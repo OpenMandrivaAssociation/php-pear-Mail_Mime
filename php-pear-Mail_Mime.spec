@@ -3,13 +3,14 @@
 %define modname	%{_class}_%{_subclass}
 
 Summary:	Mail_Mime provides classes to create mime messages
+
 Name:		php-pear-%{modname}
-Version:	1.8.8
-Release:	5
+Version:	1.8.9
+Release:	1
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/%{modname}
-Source0:	http://download.pear.php.net/package/%{modname}-%{version}.tgz
+Source0:	http://download.pear.php.net/package/Mail_Mime-%{version}.tgz
 BuildArch:	noarch
 BuildRequires:	php-pear
 Requires(post,preun):	php-pear
@@ -45,4 +46,5 @@ install -m 644 %{modname}.xml %{buildroot}%{_datadir}/pear/packages
 %files
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{modname}.xml
+
 
