@@ -9,7 +9,7 @@ Version:	1.10.9
 Release:	2
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/%{modname}
+Url:		https://pear.php.net/package/%{modname}
 Source0:	http://download.pear.php.net/package/Mail_Mime-%{version}.tgz
 BuildArch:	noarch
 BuildRequires:	php-pear
